@@ -36,7 +36,7 @@ export const AdminDashboard: React.FC = () => {
 
   // Notification Composer States
   const [notifTitle, setNotifTitle] = useState('⚡ Special Pro Offer: 33% Off');
-  const [notifBody, setNotifBody] = useState('Upgrade to WhisperLedger Pro for unlimited AI voice logging & RBI statutory recovery notices.');
+  const [notifBody, setNotifBody] = useState('Upgrade to WhisperLedger Pro for unlimited household shared spaces and formal statutory refund tracking.');
   const [notifImageUrl, setNotifImageUrl] = useState('/assets/banners/discount_banner.jpg');
   const [notifAudience, setNotifAudience] = useState<'all' | 'pro_only' | 'single_user'>('all');
   const [notifType, setNotifType] = useState('promo');
@@ -944,7 +944,7 @@ export const AdminDashboard: React.FC = () => {
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 outline-none"
                   >
                     <option value="starter_free">Starter Free</option>
-                    <option value="pro">Pro (Unlimited AI & Statutory Recovery)</option>
+                    <option value="pro">Pro (Unlimited Households & Statutory Recovery)</option>
                   </select>
                 </div>
 
