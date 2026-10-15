@@ -89,7 +89,7 @@ export const AdminDashboard: React.FC = () => {
       if (!active) return;
       if (res.success && res.data) {
         const role = res.data.role;
-        if (role !== 'platform_admin' && role !== 'admin' && role !== 'household_admin') {
+        if (role !== 'platform_admin') {
           api.logout();
           navigate('/login', { replace: true });
           return;
