@@ -1,4 +1,8 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://whisperledger-api-dozavowbya-el.a.run.app/api/v1';
+// Development uses Vite's same-origin proxy so the production API does not
+// need to trust arbitrary localhost origins. Production receives the explicit
+// Cloud Run URL (or VITE_API_URL) and is protected by its narrow CORS policy.
+const API_BASE_URL = import.meta.env.VITE_API_URL
+  || (import.meta.env.DEV ? '/api/v1' : 'https://whisperledger-api-dozavowbya-el.a.run.app/api/v1');
 
 export interface User {
   id: string;

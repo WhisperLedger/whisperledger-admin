@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+const cloudApiOrigin = 'https://whisperledger-api-dozavowbya-el.a.run.app';
+
 export default defineConfig({
   plugins: [react()],
   server: {
@@ -8,8 +10,9 @@ export default defineConfig({
     port: 5175,
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: cloudApiOrigin,
         changeOrigin: true,
+        secure: true,
       },
     },
   },
