@@ -17,7 +17,7 @@ export const AdminLogin: React.FC = () => {
       api.getMe().then((res) => {
         if (active && res.success && res.data) {
           const role = res.data.role;
-          if (role === 'platform_admin' || role === 'admin' || role === 'household_admin') {
+          if (role === 'platform_admin') {
             navigate('/', { replace: true });
           }
         }
@@ -35,7 +35,7 @@ export const AdminLogin: React.FC = () => {
       const res = await api.login(email.trim(), password);
       if (res.success && res.data?.tokens?.access_token) {
         const user = res.data.user;
-        if (user.role !== 'platform_admin' && user.role !== 'admin' && user.role !== 'household_admin') {
+        if (user.role !== 'platform_admin') {
           setError('This account does not have platform administrator privileges.');
           setLoading(false);
           return;
