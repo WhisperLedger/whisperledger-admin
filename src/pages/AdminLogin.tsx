@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LockKeyhole, ShieldCheck, UserRound, Server } from 'lucide-react';
+import { LockKeyhole, ShieldCheck, UserRound } from 'lucide-react';
 import { api } from '../services/api';
 
 export const AdminLogin: React.FC = () => {
@@ -62,16 +62,13 @@ export const AdminLogin: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-blue-600">WhisperLedger</p>
-              <span className="flex items-center gap-1 text-[10px] font-bold uppercase bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full">
-                <Server className="w-2.5 h-2.5" /> ROOT OPERATIONS
-              </span>
             </div>
             <h1 className="mt-1 text-xl font-bold tracking-tight text-slate-950">Operator Console</h1>
           </div>
         </div>
 
         <p className="mt-5 text-sm leading-6 text-slate-600">
-          Sign in to dispatch push notifications under app name <strong>WhisperLedger</strong>, manage user subscriptions, and inspect real-time cloud metrics.
+          Restricted access for authorised WhisperLedger operators. This console manages account access, subscriptions and product communications.
         </p>
 
         <form onSubmit={handleLogin} className="mt-6 space-y-4">
@@ -125,13 +122,13 @@ export const AdminLogin: React.FC = () => {
             className="flex w-full items-center justify-center gap-2 py-3 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition disabled:opacity-60"
           >
             <ShieldCheck className="h-4 w-4" />
-            {loading ? 'Authenticating with PostgreSQL…' : 'Sign In to Operations Console'}
+            {loading ? 'Signing in…' : 'Sign in securely'}
           </button>
         </form>
 
         <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5 text-xs text-slate-500">
-          <span>WhisperLedger Standalone Admin</span>
-          <span className="font-mono text-[11px] text-slate-400">GCP Cloud Run • Neon DB</span>
+          <span>WhisperLedger Admin</span>
+          <span className="text-[11px] text-slate-400">Platform administrators only</span>
         </div>
       </section>
     </main>

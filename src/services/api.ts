@@ -63,7 +63,7 @@ export interface BroadcastNotification {
   title: string;
   body: string;
   image_url?: string;
-  target: 'all' | 'pro_only' | 'single_user' | string;
+  target: 'all' | 'pro_only' | 'single_user' | 'selected_users' | string;
   target_user_id?: string;
   type: 'promo' | 'system' | 'security' | 'update' | string;
   delivered_count: number;
@@ -134,8 +134,8 @@ class AdminApiService {
     image_url?: string;
     target: string;
     target_user_id?: string | null;
+    target_user_ids?: string[];
     type: string;
-    delivered_count?: number;
   }) {
     const res = await fetch(`${API_BASE_URL}/admin/notifications`, {
       method: 'POST',

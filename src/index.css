@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.form-control {
+  width: 100%;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 0.5rem;
+  background: white;
+  padding: 0.5rem 0.75rem;
+  color: rgb(15 23 42);
+  font-size: 0.75rem;
+  font-weight: 400;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: rgb(100 116 139);
+  box-shadow: 0 0 0 3px rgb(148 163 184 / 0.18);
+}
+
 @layer base {
   :root {
     --primary: #4D43FE;
